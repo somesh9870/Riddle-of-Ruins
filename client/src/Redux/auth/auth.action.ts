@@ -93,7 +93,7 @@ export const userLogin =
 
 // signup api methods
 export const userSignup =
-  (payload: SignupData) => async (dispatch: AppDispatch) => {
+  (payload: SignupData):any => async (dispatch: AppDispatch) => {
     dispatch(userSignupRequest());
     try {
       await userSignupAPI(payload);
