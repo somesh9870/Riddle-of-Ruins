@@ -10,11 +10,7 @@ export type AppDispatch = typeof store.dispatch;
 
 export type RootState = ReturnType<typeof store.getState>;
 
-// Use throughout your app instead of plain `useDispatch` and `useSelector`
-// type DispatchFunc = () => AppDispatch;
-// export const useAppDispatch: DispatchFunc = useDispatch;
-
-// or
+// Throughout your app instead of plain `useDispatch` and `useSelector` use --> 'useAppDispatch' and 'useAppSelector' respectively
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

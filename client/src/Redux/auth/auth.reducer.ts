@@ -43,6 +43,25 @@ const reducer = (
         token: action.payload,
       };
 
+    case types.USER_SIGNUP_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case types.USER_SIGNUP_ERROR:
+      return {
+        ...state,
+        loading: false,
+        error: true,
+      };
+
+    case types.USER_SIGNUP_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+      };
+
     default:
       return state;
   }
