@@ -1,10 +1,11 @@
 import axios, { AxiosResponse } from "axios";
 import { LoginData, SignupData } from "../../utils/types";
 
+let url=""
 export const userLoginAPI = async (payload: LoginData) => {
     try {
         let res: AxiosResponse<{ token: string }> = await axios.post(
-            "http://localhost:5000/user/login",
+            "https://smoggy-fawn-bonnet.cyclic.app/user/login",
             payload
         );
         return res.data;
@@ -16,7 +17,7 @@ export const userLoginAPI = async (payload: LoginData) => {
 export const userSignupAPI = async (payload: SignupData) => {
     try {
         await axios.post(
-            "http://localhost:5000/user/register",
+            "https://smoggy-fawn-bonnet.cyclic.app/user/register",
             payload
         );
     } catch (err) {
