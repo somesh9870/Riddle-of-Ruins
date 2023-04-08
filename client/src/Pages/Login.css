@@ -1,0 +1,38 @@
+.ravi_login{
+    width: auto;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 200px;
+}
+.ravi_login>input{
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin-bottom: 30px;
+}
+.ravi_login>input:hover{
+   border: 2px solid blue;
+}
+.ravi_login>label{
+    color: aliceblue;
+    text-align: left;
+    font-size: x-large;
+}
+.login{
+    background-color: blue;
+    color: azure;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+}
+.login:hover{
+    background-color: black;
+}
+
+
+.background-img{
+    background-image: url("https://cdna.artstation.com/p/assets/images/images/001/738/746/large/eva-kedves-cabininthewoodsweb.jpg?1452028763");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
