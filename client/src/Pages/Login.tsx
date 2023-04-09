@@ -4,6 +4,8 @@ import "./Login.css";
 import { userLogin } from "../Redux/auth/auth.action";
 import { useNavigate } from "react-router-dom";
 import { LoginData } from "../utils/types";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [username, setUserName] = useState("");
@@ -24,10 +26,12 @@ const Login = () => {
       dispatch(userLogin(payload)).then((response: any) => {
         if (sessionStorage.getItem("token")) {
           console.log(response);
-          navigate("/console");
+          toast.success("Login successful!");
+          navigate("/prelaunch");
         } else {
           // Handle incorrect user information
           console.log("Invalid crediantial");
+          toast.error("Invalid credentials");
         }
       });
     }
@@ -35,6 +39,7 @@ const Login = () => {
 
   return (
     <div className="background-img h-screen flex mx-auto items-center justify-center">
+      <ToastContainer />
       <div className="md:mx-32 text-center md:p-12 ">
         <div className=" mx-auto rounded-lg ">
           {/* <h3 className="font-bold text-2xl "></h3> */}
