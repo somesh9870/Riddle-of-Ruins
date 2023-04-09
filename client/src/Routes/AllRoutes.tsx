@@ -12,6 +12,8 @@ import Prelaunch4 from "../Pages/Prelaunch4";
 import Level1 from "../Pages/Level1";
 import Winner from "../Pages/Winner";
 import Lose from "../Pages/Lose";
+import LeaderBoard from "../Pages/Leaderboard";
+import Level2 from "../Pages/Level2";
 
 const AllRoutes = () => {
   return (
@@ -22,11 +24,11 @@ const AllRoutes = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/user" element={<User />} />
         <Route path="/console" element={<Console />} />
-        <Route path="/leaderboard" element />
+        <Route path="/leaderboard" element={<LeaderBoard />} />
         <Route path="/lose" element={<Lose />} />
         <Route path="/winner" element={<Winner />} />
         <Route path="/map1" element={<Level1 />} />
-        <Route path="/map2" element />
+        <Route path="/map2" element={<Level2 />} />
         <Route path="/map3" element />
         <Route path="/map4" element />
         <Route path="/prelaunch" element={<Prelaunch />} />

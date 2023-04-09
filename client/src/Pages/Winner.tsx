@@ -25,7 +25,7 @@ const Winner = () => {
         style={{
           position: "absolute",
           top: "90%",
-          left: "70%",
+          left: "77%",
           transform: "translate(-50%, -50%)",
         }}
       >

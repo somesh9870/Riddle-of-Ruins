@@ -25,7 +25,7 @@ const Lose = () => {
         style={{
           position: "absolute",
           top: "90%",
-          left: "70%",
+          left: "35%",
           transform: "translate(-50%, -50%)",
         }}
       >

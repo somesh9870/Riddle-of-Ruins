@@ -1,0 +1,12 @@
+.hdf{
+display:grid;
+ grid-template-columns: repeat("5, 1fr");
+ grid-template-rows: repeat("2, 1fr");
+ gap: 20;
+}
+
+
+
+.hdf:hover{
+display: block;
+}
