@@ -59,5 +59,24 @@ userRouter.post("/login", async (req, res) => {
   }
 });
 
-module.exports = userRouter;
+userRouter.patch("/update", async (req, res) => {
+  const { username } = req.query;
+  const payload = req.body;
+  try {
+    let user = await UserModel.find({ _id: id }, payload);
+    res.status(200).send({ message: "User successfully updated." });
+  } catch (err) {
+    res.status(400).send({ message: err.message });
+  }
+});
 
+userRouter.get("/leaderboard", async (req, res) => {
+  try {
+    let user = await UserModel.find({});
+    res.status(200).send({ message: user });
+  } catch (err) {
+    res.status(400).send({ message: err.message });
+  }
+});
+
+module.exports = userRouter;
