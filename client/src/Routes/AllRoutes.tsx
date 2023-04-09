@@ -1,14 +1,20 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import HomePage from "../Pages/HomePage";
+import Login from "../Pages/Login";
+import Signup from "../Pages/Signup";
+import User from "../Pages/User";
+import Console from "../Pages/Console";
 
 const AllRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element />
-        <Route path="/login" element />
-        <Route path="/signup" element />
-        <Route path="/console" element />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/console" element={<Console />} />
         <Route path="/leaderboard" element />
         <Route path="/lose" element />
         <Route path="/win" element />

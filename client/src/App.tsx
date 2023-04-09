@@ -1,9 +1,9 @@
-
-import React from 'react';
-import './App.css';
-import Login from './Pages/Login';
-import { Sign } from 'crypto';
-import Signup from './Pages/Signup';
+import React from "react";
+import "./App.css";
+import Login from "./Pages/Login";
+import { Sign } from "crypto";
+import Signup from "./Pages/Signup";
+import AllRoutes from "./Routes/AllRoutes";
 
 function App() {
   return (
@@ -14,8 +14,9 @@ function App() {
       <p>Hover over me to see the custom cursor!</p>
     </div>
     </h1> */}
-    <Login/>
-    <Signup />
+      {/* <Login/>
+    <Signup /> */}
+      <AllRoutes />
     </div>
   );
 }
