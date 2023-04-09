@@ -2,6 +2,8 @@ import { LoginData, SignupData } from "../../utils/types";
 import { AppDispatch } from "../store";
 import { userLoginAPI, userSignupAPI } from "./auth.api";
 import * as types from "./auth.types";
+// import { toast } from "react-hot-toast";
+import { ToastContainer, toast } from "react-toastify";
 
 // login interface
 export interface IUserLoginRequest {
@@ -84,21 +86,28 @@ export const userLogin =
     try {
       let res = await userLoginAPI(payload);
       if (res) {
-        dispatch(userLoginSuccess(res?.token));
+        dispatch(userLoginSuccess(res));
+        toast.success("Login successful"); // Trigger success toast
       }
     } catch (err) {
       dispatch(userLoginError());
+      toast.error("Failed to login, please try again later");
     }
   };
 
 // signup api methods
 export const userSignup =
-  (payload: SignupData):any => async (dispatch: AppDispatch) => {
+  (payload: SignupData): any =>
+  async (dispatch: AppDispatch) => {
     dispatch(userSignupRequest());
     try {
-      await userSignupAPI(payload);
-      dispatch(userSignupSuccess());
+      let res = await userSignupAPI(payload);
+      if (res) {
+        dispatch(userSignupSuccess());
+        toast.success("Signup Successful!"); // add toaster here
+      }
     } catch (err) {
       dispatch(userSignupError());
+      toast.error("Failed to sign up, please try again later");
     }
   };
