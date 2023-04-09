@@ -1,13 +1,12 @@
 import React from "react";
-import Launch from "../Assets/pre1.mp4";
-import Prelaunch2 from "./Prelaunch2";
+import Launch from "../Assets/pre2.mp4";
 import { useNavigate } from "react-router-dom";
 
-const Prelaunch = () => {
-  const Navigate= useNavigate()
-  const handleClick= ()=>{
-    Navigate("/prelaunch2")
-  }
+const Prelaunch2 = () => {
+    const Navigate= useNavigate()
+    const handleClick= ()=>{
+      Navigate("/prelaunch3")
+    }
   return (
     <div style={{position: 'relative',overflow: 'hidden'}} className="flex justify-center items-center h-screen">
      
@@ -16,11 +15,11 @@ const Prelaunch = () => {
     </video>
     <div style={{position: 'absolute', top: '90%', left: '70%', transform: 'translate(-50%, -50%)'}}>
       <div className="grid grid-cols-2 gap-12">
-        <button onClick={handleClick}>Next</button>
+        <button  onClick={handleClick}>Next</button>
       </div>
     </div>
     </div>
   );
 };
 
-export default Prelaunch;
+export default Prelaunch2;

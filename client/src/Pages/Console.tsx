@@ -12,6 +12,12 @@ const Console = () => {
       <source src={consoleImg} type="video/mp4" />
     </video>
 
+    <div style={{position: 'absolute', top: '5%', left: '85%', transform: 'translate(-50%, -50%)', display:"flex" , gap:"20px"}}>
+      
+      <h1 className="text-white p-4 text-2xl">Level:</h1>
+      <h1 className="text-white p-4 text-2xl">Player:</h1>
+    </div>
+
     <div style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
       <div className="grid grid-cols-2 gap-12">
         <button onClick={()=>{alert("clicked")}}>New Game</button>

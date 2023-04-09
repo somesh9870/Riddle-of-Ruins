@@ -34,7 +34,7 @@ const HomePage = () => {
       style={{
         backgroundImage: `url(${homeimg})`,
         backgroundSize: "cover",
-        opacity: isLoading ? 0.5 : 1,
+        opacity: isLoading ? 0.8 : 1,
       }}
     >
       <div
@@ -45,12 +45,10 @@ const HomePage = () => {
         }}
       >
         {isLoading ? (
-          <FallingLines color="#4fa94d" width="100" visible={true} />
+          <FallingLines color="purple" width="100" visible={true} />
         ) : (
-          <div>
-            {/* <button className="button" data-text="Play now!">
-              Play now!
-            </button> */}
+          <div style={{marginTop:"450%"}}>
+          
             <button className="button" onClick={handleHomePageClick}>
               <span className="actual-text">&nbsp;PLAY&nbsp;</span>
               <span className="hover-text" aria-hidden="true">
