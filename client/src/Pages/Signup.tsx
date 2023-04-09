@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAppDispatch } from "../Redux/store";
 import { userSignup } from "../Redux/auth/auth.action";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 const Signup = () => {
@@ -13,6 +13,7 @@ const Signup = () => {
   // const navigate = useNavigate();
 
   const submitHandler = () => {
+    localStorage.setItem("username", username);
     dispatch(userSignup({ email, password, username, age }));
   };
 

@@ -18,7 +18,6 @@ export const userLoginAPI = async (payload: LoginData) => {
 
 export const userSignupAPI = async (payload: SignupData) => {
   try {
-    sessionStorage.setItem("username", payload.username);
     let res = await axios.post(
       "https://smoggy-fawn-bonnet.cyclic.app/user/register",
       payload
