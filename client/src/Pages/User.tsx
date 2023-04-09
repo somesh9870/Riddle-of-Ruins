@@ -1,6 +1,5 @@
 import React from "react";
 import homeimg from "../Assets/Landing_Page.png";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const UserPage = () => {

@@ -14,7 +14,7 @@ const Login = () => {
     <div className="background-img h-screen flex mx-auto items-center justify-center">
       <div className="md:mx-32 text-center md:p-12 ">
         <div className=" mx-auto rounded-lg ">
-          <h3 className="font-bold text-2xl "></h3>
+          {/* <h3 className="font-bold text-2xl "></h3> */}
           <div className="md:px-12 ">
             <form action="">
               <div className=" p-2">
