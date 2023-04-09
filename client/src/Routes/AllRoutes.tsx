@@ -5,6 +5,7 @@ import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import User from "../Pages/User";
 import Console from "../Pages/Console";
+import Prelaunch from "../Pages/Prelaunch";
 
 const AllRoutes = () => {
   return (
@@ -22,7 +23,7 @@ const AllRoutes = () => {
         <Route path="/map2" element />
         <Route path="/map3" element />
         <Route path="/map4" element />
-        <Route path="/prelaunch1" element />
+        <Route path="/prelaunch" element={<Prelaunch />} />
         <Route path="/prelaunch2" element />
         <Route path="/prelaunch3" element />
         <Route path="/prelaunch4" element />
