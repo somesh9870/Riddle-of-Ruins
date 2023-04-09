@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useAppDispatch } from "../Redux/store";
 import { userSignup } from "../Redux/auth/auth.action";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -9,10 +10,12 @@ const Signup = () => {
   const [password, setPass] = useState("");
   const [age, setAge] = useState(0);
   const dispatch = useAppDispatch();
-  function submitHandler() {
+  // const navigate = useNavigate();
+
+  const submitHandler = () => {
     dispatch(userSignup({ email, password, username, age }));
-    
-  }
+  };
+
   return (
     <div className="background-img h-screen flex mx-auto items-center justify-center">
       <div className="md:mx-32 text-center md:p-12 ">

@@ -4,6 +4,7 @@ import * as types from "./auth.types";
 export interface AuthState {
   loading: boolean;
   error: boolean;
+  isSignup: boolean;
   isAuth: boolean;
   token: string;
 }
@@ -11,6 +12,7 @@ export interface AuthState {
 const initialState = {
   loading: false,
   error: false,
+  isSignup: false,
   isAuth: false,
   token: "",
 };
@@ -60,6 +62,7 @@ const reducer = (
       return {
         ...state,
         loading: false,
+        isSignup: true,
       };
 
     default:

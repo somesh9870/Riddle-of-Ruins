@@ -2,14 +2,37 @@ import { useState } from "react";
 import { useAppDispatch } from "../Redux/store";
 import "./Login.css";
 import { userLogin } from "../Redux/auth/auth.action";
+import { useNavigate } from "react-router-dom";
+import { LoginData } from "../utils/types";
 
 const Login = () => {
   const [username, setUserName] = useState("");
   const [password, setPass] = useState("");
   const dispatch = useAppDispatch();
-  function submitHandler() {
-    dispatch(userLogin({ username, password }));
-  }
+  const navigate = useNavigate();
+
+  // function submitHandler() {
+  //   dispatch(userLogin({ username, password }));
+  // }
+
+  const submitHandler = () => {
+    if (username.length && password.length) {
+      const payload: LoginData = {
+        username,
+        password,
+      };
+      dispatch(userLogin(payload)).then((response: any) => {
+        if (sessionStorage.getItem("token")) {
+          console.log(response);
+          navigate("/console");
+        } else {
+          // Handle incorrect user information
+          console.log("Invalid crediantial");
+        }
+      });
+    }
+  };
+
   return (
     <div className="background-img h-screen flex mx-auto items-center justify-center">
       <div className="md:mx-32 text-center md:p-12 ">
