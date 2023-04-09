@@ -9,9 +9,11 @@ import obj7 from "../Assets/objects/pen.png";
 import obj8 from "../Assets/objects/ball.png";
 import obj9 from "../Assets/objects/sword.png";
 import obj10 from "../Assets/objects/umbrella.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Level1 = () => {
+  const [score, setScore] = useState(0);
   const [ball, setBall] = useState(false);
   const [axe, setAxe] = useState(false);
   const [bulb, setBulb] = useState(false);
@@ -22,9 +24,28 @@ const Level1 = () => {
   const [pen, setPen] = useState(false);
   const [sword, setSword] = useState(false);
   const [umbrella, setUmbrella] = useState(false);
+  const navigate = useNavigate();
+  const [seconds, setSeconds] = useState(60);
 
-  const imgOpa = axe? "opacity-100" : "opacity-60
+  useEffect(() => {
+    let intervalId;
 
+    if (seconds > 0) {
+      intervalId = setInterval(() => {
+        setSeconds(seconds - 1);
+      }, 1000);
+    }
+
+    if (score === 100) {
+      navigate("/winner");
+    }
+
+    if (seconds === 1 && score < 100) {
+      navigate("/lose");
+    }
+
+    return () => clearInterval(intervalId);
+  }, [seconds]);
   return (
     <div
       className="flex justify-center items-center h-screen"
@@ -35,21 +56,44 @@ const Level1 = () => {
       }}
     >
       <div
+        style={{
+          position: "absolute",
+          top: "0em",
+          left: "30em",
+          display: "flex",
+        }}
+      >
+        <h1 style={{ color: "white", fontSize: "24px", fontFamily: "serif" }}>
+          {seconds === 0 ? "Time up!" : `Time remaining: ${seconds}s`}
+        </h1>
+        <br />
+        <h1
+          style={{
+            color: "white",
+            fontSize: "24px",
+            fontFamily: "serif",
+            marginLeft: "30px",
+          }}
+        >
+          Score:{score}
+        </h1>
+      </div>
+
+      <div
         style={{ position: "absolute", top: "9em", left: "24em" }}
         onClick={() => {
           setAxe(true);
+
+          axe === false && setScore((prev) => prev + 10);
         }}
       >
-        <img
-          style={{ width: "40px", ${imgOpacity:"100":"60"} }}
-          src={obj1}
-          alt="#"
-        />
+        <img style={{ width: "40px", opacity: "60%" }} src={obj1} alt="#" />
       </div>
       <div
         style={{ position: "absolute", top: "28em", left: "54.5em" }}
         onClick={() => {
           setBulb(true);
+          bulb === false && setScore((prev) => prev + 10);
         }}
       >
         <img style={{ width: "20px", opacity: "60%" }} src={obj2} alt="#" />
@@ -58,6 +102,7 @@ const Level1 = () => {
         style={{ position: "absolute", top: "23.5em", left: "5.5em" }}
         onClick={() => {
           setCrown(true);
+          crown === false && setScore((prev) => prev + 10);
         }}
       >
         <img style={{ width: "50px", opacity: "60%" }} src={obj3} alt="#" />
@@ -66,6 +111,7 @@ const Level1 = () => {
         style={{ position: "absolute", top: "43em", left: "67em" }}
         onClick={() => {
           setEgg(true);
+          egg === false && setScore((prev) => prev + 10);
         }}
       >
         <img style={{ width: "60px", opacity: "80%" }} src={obj4} alt="#" />
@@ -74,6 +120,7 @@ const Level1 = () => {
         style={{ position: "absolute", top: "43em", left: "30em" }}
         onClick={() => {
           setGuitar(true);
+          guitar === false && setScore((prev) => prev + 10);
         }}
       >
         <img style={{ width: "100px", opacity: "50%" }} src={obj5} alt="#" />
@@ -82,6 +129,7 @@ const Level1 = () => {
         style={{ position: "absolute", top: "10em", left: "50em" }}
         onClick={() => {
           setLantren(true);
+          lantern === false && setScore((prev) => prev + 10);
         }}
       >
         <img style={{ width: "20px", opacity: "60%" }} src={obj6} alt="#" />
@@ -90,6 +138,7 @@ const Level1 = () => {
         style={{ position: "absolute", top: "40em", left: "19em" }}
         onClick={() => {
           setPen(true);
+          pen === false && setScore((prev) => prev + 10);
         }}
       >
         <img style={{ width: "70px", opacity: "80%" }} src={obj7} alt="#" />
@@ -98,6 +147,7 @@ const Level1 = () => {
         style={{ position: "absolute", top: "35em", left: "55em" }}
         onClick={() => {
           setBall(true);
+          ball === false && setScore((prev) => prev + 10);
         }}
       >
         <img style={{ width: "40px", opacity: "50%" }} src={obj8} alt="#" />
@@ -106,6 +156,7 @@ const Level1 = () => {
         style={{ position: "absolute", top: "25em", left: "46em" }}
         onClick={() => {
           setSword(true);
+          sword === false && setScore((prev) => prev + 10);
         }}
       >
         <img style={{ width: "50px", opacity: "60%" }} src={obj9} alt="#" />
@@ -114,6 +165,7 @@ const Level1 = () => {
         style={{ position: "absolute", top: "5em", left: "65em" }}
         onClick={() => {
           setUmbrella(true);
+          umbrella === false && setScore((prev) => prev + 10);
         }}
       >
         <img style={{ width: "70px", opacity: "60%" }} src={obj10} alt="#" />
