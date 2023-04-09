@@ -1,12 +1,11 @@
-import React from "react";
-import Launch from "../Assets/pre1.mp4";
-import Prelaunch2 from "./Prelaunch2";
+
+import Launch from "../Assets/pre4.mp4";
 import { useNavigate } from "react-router-dom";
 
-const Prelaunch = () => {
+const Prelaunch4 = () => {
   const Navigate= useNavigate()
   const handleClick= ()=>{
-    Navigate("/prelaunch2")
+    Navigate("/console")
   }
   return (
     <div style={{position: 'relative',overflow: 'hidden'}} className="flex justify-center items-center h-screen">
@@ -23,4 +22,4 @@ const Prelaunch = () => {
   );
 };
 
-export default Prelaunch;
+export default Prelaunch4;
