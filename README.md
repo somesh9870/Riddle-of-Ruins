@@ -31,7 +31,8 @@
 
 ##Team
 ![Somesh](https://user-images.githubusercontent.com/112899880/230849176-ef5534ff-568e-44ed-88a3-1f3a4695d77a.png)
-![PROimg](https://user-images.githubusercontent.com/112899880/230849039-06b5c527-1582-4f86-9a9d-45abb0a5a745.jpg)
+https://avatars.githubusercontent.com/u/112899880?s=40&v=4
+
 
 
 
