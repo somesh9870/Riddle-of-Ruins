@@ -1,7 +1,25 @@
 # Riddle of Ruines
 
-##[Deployed link][https://game-geniuses.vercel.app/]
+##Deployed link - [Riddle of Ruins](https://game-geniuses.vercel.app/)
 
+
+## Team
+1. Somesh Rawat
+2. Uday Kumar Kashyap
+
+## Tech Stack
+
+- Frontend
+  -- React
+  -- Redux
+  -- TypeScript
+  -- Redux-thunk
+  -- Tailwind
+ 
+- Backend
+  -- Node
+  -- Express
+  -- Mongodb Atlas
 
 ##Landing Page
 ![Screenshot (701)](https://user-images.githubusercontent.com/112899880/230843878-b353f037-d2e5-4ae0-9314-cf34c6112bb0.png)
