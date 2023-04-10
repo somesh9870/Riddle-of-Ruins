@@ -29,10 +29,7 @@
 ##Leaderboard 
 ![Screenshot (711)](https://user-images.githubusercontent.com/112899880/230845554-b229aaf4-3cea-4632-91ea-58c0aad1c5d1.png)
 
-##Team
-<!>
-![Somesh](https://user-images.githubusercontent.com/112899880/230849176-ef5534ff-568e-44ed-88a3-1f3a4695d77a.png)
-![112899880](https://user-images.githubusercontent.com/112899880/230850109-4e4f8b34-571a-4b7a-907e-053561c79c62.png)
+
 
 
 
