@@ -49,9 +49,9 @@ const Level1 = () => {
       navigate("/winner");
     }
 
-    // if (seconds === 1 && score < 100) {
-    //   navigate("/lose");
-    // }
+    if (seconds === 1 && score < 100) {
+      navigate("/lose");
+    }
 
     return () => clearInterval(intervalId);
   }, [seconds]);
