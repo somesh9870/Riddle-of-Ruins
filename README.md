@@ -1,6 +1,6 @@
 # Riddle of Ruines
 
-##Deployed link - [Riddle of Ruins](https://game-geniuses.vercel.app/)
+## Deployed link - [Riddle of Ruins](https://game-geniuses.vercel.app/)
 
 
 ## Team
