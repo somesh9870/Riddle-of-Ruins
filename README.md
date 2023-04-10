@@ -1,6 +1,8 @@
 # Riddle of Ruines
 
 ##Deployed link[https://game-geniuses.vercel.app/]
+![112800148](https://user-images.githubusercontent.com/112899880/230850724-2c4da3d1-c284-4d47-8328-b9b9f6221f62.jpg)
+![112899880](https://user-images.githubusercontent.com/112899880/230850751-be3c87c0-ca29-4411-b8e0-92dfa71360cc.png)
 
 ##Landing Page
 ![Screenshot (701)](https://user-images.githubusercontent.com/112899880/230843878-b353f037-d2e5-4ae0-9314-cf34c6112bb0.png)
