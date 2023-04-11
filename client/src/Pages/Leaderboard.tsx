@@ -1,11 +1,34 @@
 import Launch from "../Assets/Leaderboard.mp4";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const LeaderBoard = () => {
   const Navigate = useNavigate();
   const handleClick = () => {
     Navigate("/console");
   };
+
+  const [data, setData] = useState([]);
+
+  const getUserData = async () => {
+    try {
+      let res = await axios.get(
+        `https://smoggy-fawn-bonnet.cyclic.app/user/leaderboard`
+      );
+      console.log(res.data);
+      setData(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  console.log(data);
+
+  useEffect(() => {
+    getUserData();
+  });
+
   return (
     <div
       style={{ position: "relative", overflow: "hidden" }}

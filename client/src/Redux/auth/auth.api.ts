@@ -9,7 +9,7 @@ export const userLoginAPI = async (payload: LoginData) => {
         payload
       );
     sessionStorage.setItem("token", res.data.token);
-    sessionStorage.setItem("token", res.data.userID);
+    sessionStorage.setItem("userID", res.data.userID);
     return res.data.token;
   } catch (err) {
     console.log("userLoginAPI error", err);
@@ -22,7 +22,8 @@ export const userSignupAPI = async (payload: SignupData) => {
       "https://smoggy-fawn-bonnet.cyclic.app/user/register",
       payload
     );
-    return res.data;
+    console.log(res.data);
+    return res.data.message;
   } catch (err) {
     console.log("userSignupAPI error: ", err);
   }

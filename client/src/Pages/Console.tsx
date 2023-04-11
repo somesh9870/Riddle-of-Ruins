@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import consoleImg from "../Assets/game_console.mp4";
 import "./Button.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Console = () => {
+  const [data, setData] = useState([]);
+
+  const getUserData = async () => {
+    let id = sessionStorage.getItem("userID");
+    try {
+      let res = await axios.get(
+        `https://smoggy-fawn-bonnet.cyclic.app/user/${id}`
+      );
+      console.log(res.data);
+      setData(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  console.log(data);
+
+  useEffect(() => {
+    getUserData();
+  });
+
   return (
     <div
       style={{ position: "relative", overflow: "hidden" }}

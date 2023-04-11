@@ -103,8 +103,8 @@ export const userSignup =
     try {
       let res = await userSignupAPI(payload);
       if (res) {
-        dispatch(userSignupSuccess());
         toast.success("Signup Successful!"); // add toaster here
+        dispatch(userSignupSuccess());
       }
     } catch (err) {
       dispatch(userSignupError());
