@@ -48,9 +48,9 @@ const Level2 = () => {
       navigate("/winner");
     }
 
-    if (seconds === 1 && score < 100) {
-      navigate("/lose");
-    }
+    // if (seconds === 1 && score < 100) {
+    //   navigate("/lose");
+    // }
 
     return () => clearInterval(intervalId);
   }, [seconds]);
@@ -191,6 +191,52 @@ const Level2 = () => {
               src={obj10}
               alt="#"
             />
+          </div>
+          <div
+            // className="absolute bottom-1 w-full h-2  border-red-500  hover:h-20 bg-cover bg-center backdrop-filter text-white"
+            style={{
+              position: "absolute",
+              bottom: "0",
+              backgroundColor: "#d48a0d",
+              backgroundSize: "cover",
+              display: "flex",
+              width: "100%",
+              justifyContent: "space-around",
+              color: "white",
+              fontWeight: "600",
+            }}
+          >
+            {egg ? <h1 style={{ color: "red" }}>Egg</h1> : <h1>Egg</h1>}
+
+            {umbrella ? (
+              <h1 style={{ color: "red" }}>Umbrella</h1>
+            ) : (
+              <h1>Umbrella</h1>
+            )}
+
+            {crown ? <h1 style={{ color: "red" }}>Crown</h1> : <h1>Crown</h1>}
+
+            {ball ? <h1 style={{ color: "red" }}>Ball</h1> : <h1>Ball</h1>}
+
+            {axe ? <h1 style={{ color: "red" }}>Axe</h1> : <h1>Axe</h1>}
+
+            {guitar ? (
+              <h1 style={{ color: "red" }}>Guitar</h1>
+            ) : (
+              <h1>Guitar</h1>
+            )}
+
+            {lantern ? (
+              <h1 style={{ color: "red" }}>Lantren</h1>
+            ) : (
+              <h1>Lantren</h1>
+            )}
+
+            {sword ? <h1 style={{ color: "red" }}>Sword</h1> : <h1>Sword</h1>}
+
+            {bulb ? <h1 style={{ color: "red" }}>Bulb</h1> : <h1>Bulb</h1>}
+
+            {pen ? <h1 style={{ color: "red" }}>Pen</h1> : <h1>Pen</h1>}
           </div>
         </>
       )}

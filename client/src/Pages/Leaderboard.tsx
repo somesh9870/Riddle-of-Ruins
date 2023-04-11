@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const LeaderBoard = () => {
+  const [data, setData] = useState<any>([]);
+
   const Navigate = useNavigate();
   const handleClick = () => {
     Navigate("/console");
   };
-
-  const [data, setData] = useState([]);
 
   const getUserData = async () => {
     try {
@@ -27,7 +27,7 @@ const LeaderBoard = () => {
 
   useEffect(() => {
     getUserData();
-  });
+  }, []);
 
   return (
     <div
@@ -43,6 +43,7 @@ const LeaderBoard = () => {
       >
         <source src={Launch} type="video/mp4" />
       </video>
+
       <div
         style={{
           position: "absolute",
@@ -50,64 +51,32 @@ const LeaderBoard = () => {
           left: "50%",
           transform: "translate(-50%, -50%)",
           textAlign: "center",
+          border: "3px solid #d48a0d",
+          width: "25%",
+          padding: "10px",
+          borderRadius: "10px",
         }}
       >
-        <div
-          style={{
-            border: "3px solid #d48a0d",
-            width: "400px",
-            borderRadius: "15px",
-          }}
-        >
-          <h1 style={{ fontSize: "34px", color: "white" }}>
-            Top Three Players
-            <hr />
-          </h1>
-          <br />
-          <br />
-          <div
-            style={{
-              display: "flex",
-              color: "white",
-              fontWeight: 600,
-              textAlign: "center",
-              justifyContent: "space-around",
-            }}
-          >
-            <h1>Name: Lufi</h1>
-            <h1>Score: 300</h1>
-          </div>
-          <br />
-          <br />
-          <div
-            style={{
-              display: "flex",
-              color: "white",
-              fontWeight: 600,
-              textAlign: "center",
-              justifyContent: "space-around",
-            }}
-          >
-            <h1>Name: Zoro</h1>
-            <h1>Score: 280</h1>
-          </div>
-          <br />
-          <br />
-          <div
-            style={{
-              display: "flex",
-              color: "white",
-              fontWeight: 600,
-              textAlign: "center",
-              justifyContent: "space-around",
-            }}
-          >
-            <h1>Name: Nami</h1>
-            <h1>Score: 240</h1>
-          </div>
-          <br />
-          <br />
-        </div>
+        {data.length > 0 &&
+          data.map((e: any) => {
+            return (
+              <>
+                <div
+                  style={{
+                    borderBottom: "2px solid #d48a0d",
+                    margin: "30px",
+                    borderRadius: "15px",
+                    color: "white",
+                    display: "flex",
+                    justifyContent: "space-around",
+                  }}
+                >
+                  <h1>Name: {e.username}</h1>
+                  <h1>Score: {e.score}</h1>
+                </div>
+              </>
+            );
+          })}
       </div>
       <div
         className="grid grid-cols-2 gap-12"

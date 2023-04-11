@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loader from "../components/Loader";
 import "./level.css";
+import axios from "axios";
 
 const Level1 = () => {
   const [score, setScore] = useState(0);
@@ -30,6 +31,18 @@ const Level1 = () => {
   const [seconds, setSeconds] = useState(63);
   const [isLoading, setIsLoading] = useState(true);
 
+  const updateScore = async (score) => {
+    let ID = sessionStorage.getItem(`userID`);
+    try {
+      let res = axios.patch(
+        `https://smoggy-fawn-bonnet.cyclic.app/user/update/${ID}`,
+        score
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
@@ -46,6 +59,8 @@ const Level1 = () => {
     }
 
     if (score === 100) {
+      console.log(score);
+      updateScore(score);
       navigate("/winner");
     }
 
@@ -207,16 +222,37 @@ const Level1 = () => {
               fontWeight: "600",
             }}
           >
-            <h1>Egg</h1>
-            <h1>Umbrella</h1>
-            <h1>Crown</h1>
-            <h1>Ball</h1>
-            <h1>Axe</h1>
-            <h1>Guitar</h1>
-            <h1>Lantren</h1>
-            <h1>Sword</h1>
-            <h1>Bulb</h1>
-            <h1>Pen</h1>
+            {egg ? <h1 style={{ color: "red" }}>Egg</h1> : <h1>Egg</h1>}
+
+            {umbrella ? (
+              <h1 style={{ color: "red" }}>Umbrella</h1>
+            ) : (
+              <h1>Umbrella</h1>
+            )}
+
+            {crown ? <h1 style={{ color: "red" }}>Crown</h1> : <h1>Crown</h1>}
+
+            {ball ? <h1 style={{ color: "red" }}>Ball</h1> : <h1>Ball</h1>}
+
+            {axe ? <h1 style={{ color: "red" }}>Axe</h1> : <h1>Axe</h1>}
+
+            {guitar ? (
+              <h1 style={{ color: "red" }}>Guitar</h1>
+            ) : (
+              <h1>Guitar</h1>
+            )}
+
+            {lantern ? (
+              <h1 style={{ color: "red" }}>Lantren</h1>
+            ) : (
+              <h1>Lantren</h1>
+            )}
+
+            {sword ? <h1 style={{ color: "red" }}>Sword</h1> : <h1>Sword</h1>}
+
+            {bulb ? <h1 style={{ color: "red" }}>Bulb</h1> : <h1>Bulb</h1>}
+
+            {pen ? <h1 style={{ color: "red" }}>Pen</h1> : <h1>Pen</h1>}
           </div>
         </>
       )}
