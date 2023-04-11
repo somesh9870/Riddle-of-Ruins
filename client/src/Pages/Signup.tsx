@@ -19,6 +19,7 @@ const Signup = () => {
 
   return (
     <div className="background-img h-screen flex mx-auto items-center justify-center">
+      <ToastContainer />
       <div className="md:mx-32 text-center md:p-12 ">
         <div className=" mx-auto rounded-lg ">
           <h3 className="font-bold text-2xl text-white">Get Started</h3>

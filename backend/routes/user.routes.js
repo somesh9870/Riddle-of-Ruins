@@ -74,13 +74,14 @@ userRouter.patch("/update/:id", async (req, res) => {
 userRouter.get("/leaderboard", async (req, res) => {
   try {
     let user = await UserModel.find({}).sort({ score: -1 }).limit(3);
-    res.status(200).send({ message: user });
+    res.status(200).send(user);
   } catch (err) {
     res.status(400).send({ message: err.message });
   }
 });
 
 userRouter.get("/:id", async (req, res) => {
+  const { id } = req.params;
   try {
     let user = await UserModel.find({ _id: id });
     res.status(200).send(user);

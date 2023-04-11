@@ -32,6 +32,7 @@ const HomePage = () => {
     <div
       className="flex justify-center items-center h-screen"
       style={{
+        // position: "relative",
         backgroundImage: `url(${homeimg})`,
         backgroundSize: "cover",
         opacity: isLoading ? 0.8 : 1,
@@ -47,8 +48,7 @@ const HomePage = () => {
         {isLoading ? (
           <FallingLines color="purple" width="100" visible={true} />
         ) : (
-          <div style={{marginTop:"450%"}}>
-          
+          <div style={{ position: "absolute", bottom: "5%" }}>
             <button className="button" onClick={handleHomePageClick}>
               <span className="actual-text">&nbsp;PLAY&nbsp;</span>
               <span className="hover-text" aria-hidden="true">
